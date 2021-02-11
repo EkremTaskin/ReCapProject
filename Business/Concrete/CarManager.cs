@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -17,53 +19,43 @@ namespace Business.Concrete
 			_carDal = carDal;
 		}
 
-		public void Add(Car car)
+		public IResult Add(Car car)
         {
-			if (car.Description.Length > 2 && car.DailyPrice > 0)
+			if (car.Description.Length < 2)
 			{
-                _carDal.Add(car);
-            }
-			else
-			{
-				Console.WriteLine("Lütfen bilgileri doğru girdiğinizden emin olun !");
+                return new ErrorResult(Message.CarNameInvalid);
 			}
+
+            _carDal.Add(car);
+
+            return new SuccessResult(Message.CarAdded);
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
-            //if (true)
-            //{
             _carDal.Delete(car);
-            //}
+            return new SuccessResult(Message.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            //if (true)
-            //{
-            return _carDal.GetAll();
-            //}
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Message.CarListed);
         }
 
-        public Car GetById(int Id)
+        public IDataResult<Car> GetById(int Id)
         {
-            //if (true)
-            //{
-             return _carDal.GetById(p => p.Id == Id);
-            //}
+            return new SuccessDataResult<Car>(_carDal.GetById(p=>p.Id==Id),Message.CarListed);
         }
 
-		public List<CarDetailDto> GetCarDetails()
+		public IDataResult<List<CarDetailDto>> GetCarDetails()
 		{
-            return _carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>( _carDal.GetCarDetails(),Message.CarListed);
 		}
 
-		public void Update(Car car)
+		public IResult Update(Car car)
         {
-            //if (true)
-            //{
             _carDal.Update(car);
-            //}
+            return new SuccessResult(Message.CarUpdated);
         }
 	}
 }
