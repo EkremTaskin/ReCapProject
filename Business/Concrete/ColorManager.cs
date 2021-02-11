@@ -18,27 +18,30 @@ namespace Business.Concrete
 
 		public IResult Add(Color color)
 		{
-			throw new NotImplementedException();
+			_colorDal.Add(color);
+			return new SuccessResult();
 		}
 
 		public IResult Delete(Color color)
 		{
-			throw new NotImplementedException();
+			_colorDal.Delete(color);
+			return new SuccessResult();
 		}
 
 		public IDataResult<Color> Get(int id)
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<Color>(_colorDal.GetById(p=>p.Id == id));
 		}
 
 		public IDataResult<List<Color>> GetAll()
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
 		}
 
 		public IResult Update(Color color)
 		{
-			throw new NotImplementedException();
+			_colorDal.Update(color);
+			return new SuccessResult();
 		}
 	}
 }

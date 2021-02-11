@@ -35,6 +35,7 @@ namespace ConsoleUI
 			//}
 
 			RentalManager rentalManager = new RentalManager(new EfRentalDal());
+			//rentalManager.Update(new Rental {Id =13 ,CarId = 5008 , CustomerId = 2 , RentDate= new DateTime(2001,05,1), ReturnDate = new DateTime(2004,01,04)});
 			var result = rentalManager.Add(new Rental{CarId = 5008 , CustomerId = 1 , RentDate = new DateTime (2021 , 05 , 12)});
 
 			Console.WriteLine(result.Message);

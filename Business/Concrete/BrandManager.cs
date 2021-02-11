@@ -18,27 +18,30 @@ namespace Business.Concrete
 
 		public IResult Add(Brand brand)
 		{
-			throw new NotImplementedException();
+			_brandDal.Add(brand);
+			return new SuccessResult();
 		}
 
 		public IResult Delete(Brand brand)
 		{
-			throw new NotImplementedException();
+			_brandDal.Delete(brand);
+			return new SuccessResult();
 		}
 
 		public IDataResult<Brand> Get(int id)
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<Brand>(_brandDal.GetById(p=>p.Id == id));
 		}
 
 		public IDataResult<List<Brand>> GetAll()
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
 		}
 
 		public IResult Update(Brand brand)
 		{
-			throw new NotImplementedException();
+			_brandDal.Update(brand);
+			return new SuccessResult();
 		}
 	}
 }
