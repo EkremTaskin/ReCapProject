@@ -19,18 +19,15 @@ namespace Business.Concrete
 
 		public IResult Add(Rental rental)
 		{
-			var result = _rentalDal.GetAll(r => r.CarId == rental.CarId);
+			var result = _rentalDal.GetById(p=>p.CarId == rental.CarId && p.ReturnDate == null);
 
-			for (int i = 0; i < result.Count; i++)
+			if (result != null)
 			{
-				if (result[i].ReturnDate == null || result[i].RentDate > result[i].ReturnDate)
-				{
-					return new ErrorResult("Bu araba henüz teslim edilmedi");
-				}
+				return new ErrorResult("Araba hala kullanılıyor");
 			}
 
 			_rentalDal.Add(rental);
-			return new SuccessResult("Araba kiralanması eklendi");
+			return new SuccessResult("Araba Eklendi");
 		}
 
 		public IResult Delete(Rental rental)
