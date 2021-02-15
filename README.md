@@ -19,16 +19,16 @@
 
 🗃 **``Business Layer``** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 ``Concrete`` <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [CarManager.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Concrete/CarManager.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [BrandManager.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Concrete/BrandManager.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [ColorManager.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Concrete/ColorManager.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [CustomerManager.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Concrete/CustomerManager.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [RentalManager.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Concrete/RentalManager.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [UserManager.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Concrete/UserManager.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [CarManager.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Concrete/CarManager.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [BrandManager.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Concrete/BrandManager.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [ColorManager.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Concrete/ColorManager.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [CustomerManager.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Concrete/CustomerManager.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [RentalManager.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Concrete/RentalManager.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [UserManager.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Concrete/UserManager.cs) <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;📂 ``Abstract`` <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [ICarService.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Abstract/ICarService.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [IBrandService.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Abstract/IBrandService.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [ICarService.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Abstract/ICarService.cs) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [IBrandService.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Business/Abstract/IBrandService.cs) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [IColorService.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Abstract/IColorService.cs) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [ICustomerService.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Abstract/ICustomerService.cs) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [IRentalService.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Business/Abstract/IRentalService.cs) <br>
