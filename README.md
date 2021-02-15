@@ -1,7 +1,7 @@
 
 <h1 align="center">ReCap Project : Araba Kiralama Sistemi</h1> 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/43720773/106998466-9d31b280-6795-11eb-8e5b-16e0b78a99bc.PNG" width="600" alt="Rent A Car">
+  <img src="https://yilmazrent.com/wp-content/uploads/2019/02/rize-oto-kiralama3.png" width="600" alt="Rent A Car">
 </p>
 
 ## Layers
