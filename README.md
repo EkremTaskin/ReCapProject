@@ -1,7 +1,7 @@
 
 <h1 align="center">ReCap Project : Araba Kiralama Sistemi</h1> 
 <p align="center">
-  <img src="http://sakaryarentacar.com/assets/images/gallery/slider/sitelitik.com-slider_7.jpg" width="1000" alt="Rent A Car">
+  <img src="http://sakaryarentacar.com/assets/images/gallery/slider/sitelitik.com-slider_7.jpg" alt="Rent A Car">
 </p>
 
 ## Layers
