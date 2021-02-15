@@ -15,8 +15,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [User.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Entities/Concrete/User.cs) <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;📂 ``DTOs`` <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [CarDetailDto.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Entities/DTOs/CarDetailDto.cs) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [RentalDetailDto.cs](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/Entities/DTOs/RentalDetailDto.cs) <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📃 [RentalDetailDto.cs](https://github.com/EkremTaskin/ReCapProject/blob/master/Entities/DTOs/CarDetailDto.cs) <br><br>
 
 🗃 **``Business Layer``** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;📂 ``Concrete`` <br>
