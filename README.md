@@ -147,7 +147,6 @@ BrandName | nvarchar(25)
 
 Variable Name | Data Type
 ------------ | -------------
-CustomerId | int
 UserId | int
 CustomerName | nvarchar(25)
    
@@ -176,19 +175,3 @@ Password | nvarchar(35)
    </td>
   </tr>
  </table>
-
-## Output
-<img src="https://user-images.githubusercontent.com/43720773/107849881-381e3280-6e0f-11eb-848d-14c5fc54a4e9.jpg" alt="Console Output"></img>
-
-
-## Files
-
-<img src="https://user-images.githubusercontent.com/43720773/107958440-0e057580-6fb3-11eb-9f44-6c06089b7f80.jpg"></img><br>
-<img src="https://user-images.githubusercontent.com/43720773/107958447-0fcf3900-6fb3-11eb-9268-10aa3e2ad79e.jpg"></img><br>
-<img src="https://user-images.githubusercontent.com/43720773/107958451-11006600-6fb3-11eb-8ae8-43a41ad55628.jpg"></img>
-
-
-
-## License
-[MIT](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/LICENSE.txt) © Selim Gulce
-
