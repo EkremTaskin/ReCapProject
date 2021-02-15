@@ -1,6 +1,6 @@
 
 <h1 align="center">ReCap Project : Araba Kiralama Sistemi</h1> 
-![https://im0-tub-tr.yandex.net/i?id=3e097d3d413a89699fa255700fc4f9cf&n=13]
+![](https://im0-tub-tr.yandex.net/i?id=3e097d3d413a89699fa255700fc4f9cf&n=13)
 
 ## Layers
 🗃 **``Entities Layer``** <br>
