@@ -1,47 +1,5 @@
-[![GitHub License](https://img.shields.io/github/license/EkremTaskin/re-cap-project-with-csharp?color=green)](https://github.com/gulceselim/re-cap-project-with-csharp/blob/main/LICENSE.txt)
-![GitHub Repo stars](https://img.shields.io/github/stars/EkremTaskin/re-cap-project-with-csharp?color=yellow)
-<!--![GitHub repo size](https://img.shields.io/github/repo-size/gulceselim/re-cap-project-with-csharp)-->
 
 <h1 align="center">ReCap Project : Araba Kiralama Sistemi</h1> 
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/43720773/106998466-9d31b280-6795-11eb-8e5b-16e0b78a99bc.PNG" width="600" alt="Rent A Car">
-</p>
-
-## ⭐ Introduction 
-- **Entities, DataAccess, Business ve Console katmanlarından oluşan araba kiralama console projesidir. Car, Brand, Color, Customer, User ve Rental nesnelerinden ve onun operasyonlarından oluşan bu proje zamanla geliştirilecektir.**
-- **[Sql query](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/RentACarSQLQuery.sql) dosyamı da ekledim isteyen varsa faydalanabilir.**
-
-
-## Recent Changes
-✔ [WebAPI Katmanı](https://github.com/EkremTaskin/re-cap-project-with-csharp/tree/main/WebAPI) oluşturuldu. <br>
-✔ Business katmanındaki tüm servislerin [API controller](https://github.com/gulceselim/re-cap-project-with-csharp/tree/main/WebAPI)'ları yazıldı. <br>
-✔ [IoC Container](https://github.com/EkremTaskin/re-cap-project-with-csharp/blob/main/WebAPI/Startup.cs) prensibi uygulandı böylece bağımlılığı az (Loose Coupling) olan nesneler oluşturduk. AddSingleton metodu kullanıldı fakat ilerleyen zamanlarda AOP dahil olacağı için **AutoFac** IoC'i kullanacağız. <br>
-
-## Table of Contents
-- [Recent Changes](#recent-changes)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Layers](#layers)
-- [SQL Query](#sql-query)
-- [Tables in Database](#tables-in-database)
-- [Output](#output)
-- [Files](#files)
-- [License](#license)
-
-
-## Installation
-Aşağıdaki paketler NuGet aracığıyla **DataAccess** katmanına eklenmelidir. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; 📦 `Microsoft.EntityFrameworkCore (3.1.11)` <br>
-&nbsp;&nbsp;&nbsp;&nbsp; 📦 `Microsoft.EntityFrameworkCore.SqlServer (3.1.11)` <br>
-
-Aşağıdaki paket NuGet aracığıyla **Core** katmanına eklenmelidir. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; 📦 `Microsoft.EntityFrameworkCore.SqlServer (3.1.11)` <br>
-
-## Usage 
-Aşağıda görmüş olduğunuz resimdeki işlemi gerçekleştirdikten sonra Ctrl+F5 ile uygulamayı çalıştırabilirsiniz.
-
-![Image for Usage](https://user-images.githubusercontent.com/43720773/107143179-aa40d400-6944-11eb-9a45-e3f6dcdf6b80.jpg)
 
 
 ## Layers
