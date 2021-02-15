@@ -1,2 +1,5 @@
-WebAPI katmanını kurunuz.
-Business katmanındaki tüm servislerin Api karşılığını yazınız.
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
