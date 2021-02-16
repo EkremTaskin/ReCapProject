@@ -19,7 +19,7 @@ namespace Business.Concrete
 
 		public IResult Add(Rental rental)
 		{
-			var result = _rentalDal.GetById(p=>p.CarId == rental.CarId && p.ReturnDate == null);
+			var result = _rentalDal.GetById(p=>p.CarId == rental.CarId && (p.ReturnDate == null || p.ReturnDate > DateTime.Now));
 
 			if (result != null)
 			{
