@@ -28,7 +28,7 @@ namespace Business.Concrete
 			return new SuccessResult();
 		}
 
-		public IDataResult<Color> Get(int id)
+		public IDataResult<Color> GetById(int id)
 		{
 			return new SuccessDataResult<Color>(_colorDal.GetById(p=>p.Id == id));
 		}

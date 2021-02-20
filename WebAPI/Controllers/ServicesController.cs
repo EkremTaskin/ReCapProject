@@ -69,7 +69,7 @@ namespace WebAPI.Controllers
 		[HttpGet("getbyid")]
 		public IActionResult GetById(int id)
 		{
-			var result = _baseService.Get(id);
+			var result = _baseService.GetById(id);
 			if (result.Success)
 			{
 				return Ok(result);

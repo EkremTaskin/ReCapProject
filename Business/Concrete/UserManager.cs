@@ -29,7 +29,7 @@ namespace Business.Concrete
 			return new SuccessResult();
 		}
 
-		public IDataResult<User> Get(int id)
+		public IDataResult<User> GetById(int id)
 		{
 			return new SuccessDataResult<User>(_userDal.GetById(p=>p.Id == id));
 		}

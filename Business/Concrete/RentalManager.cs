@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -16,7 +18,7 @@ namespace Business.Concrete
 		{
 			_rentalDal = rentalDal;
 		}
-
+		[ValidationAspect(typeof(RentalValidator))]
 		public IResult Add(Rental rental)
 		{
 			var result = _rentalDal.GetById(p=>p.CarId == rental.CarId && (p.ReturnDate == null || p.ReturnDate > DateTime.Now));
@@ -36,7 +38,7 @@ namespace Business.Concrete
 			return new SuccessResult();
 		}
 
-		public IDataResult<Rental> Get(int id)
+		public IDataResult<Rental> GetById(int id)
 		{
 			return new SuccessDataResult<Rental>(_rentalDal.GetById(p => p.Id == id));
 		}
