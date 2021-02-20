@@ -21,9 +21,9 @@ namespace Business.Concrete
 		[ValidationAspect(typeof(RentalValidator))]
 		public IResult Add(Rental rental)
 		{
-			var result = _rentalDal.GetById(p=>p.CarId == rental.CarId && (p.ReturnDate == null || p.ReturnDate > DateTime.Now));
+			var result = _rentalDal.Get(p=>p.CarId == rental.CarId && (p.ReturnDate == null || p.ReturnDate > DateTime.Now));
 
-			if (result != null)
+			if (result)
 			{
 				return new ErrorResult("Araba hala kullanılıyor");
 			}

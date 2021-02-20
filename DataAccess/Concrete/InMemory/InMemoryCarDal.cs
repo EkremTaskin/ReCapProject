@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -26,22 +27,12 @@ namespace DataAccess.Concrete.InMemory
 			throw new NotImplementedException();
 		}
 
-		public List<Car> GetAll()
-		{
-			throw new NotImplementedException();
-		}
-
 		public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
 		{
 			throw new NotImplementedException();
 		}
 
-		public Car GetById(int Id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Car GetById(Expression<Func<Car, bool>> filter = null)
+		public bool Get(Expression<Func<Car, bool>> filter = null)
 		{
 			throw new NotImplementedException();
 		}
@@ -52,6 +43,11 @@ namespace DataAccess.Concrete.InMemory
 		}
 
 		public void Update(Car entity)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Car GetById(Expression<Func<Car, bool>> filter = null)
 		{
 			throw new NotImplementedException();
 		}
