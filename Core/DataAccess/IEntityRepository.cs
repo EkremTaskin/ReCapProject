@@ -12,7 +12,9 @@ namespace Core.DataAccess
 
 		T GetById(Expression<Func<T, bool>> filter = null);
 
-		bool Get(Expression<Func<T, bool>> filter = null);
+		T Get(Expression<Func<T, bool>> filter = null);
+
+		bool Any(Expression<Func<T, bool>> filter = null);
 
 		void Add(T entity);
 

@@ -51,5 +51,15 @@ namespace DataAccess.Concrete.InMemory
 		{
 			throw new NotImplementedException();
 		}
+
+		Car IEntityRepository<Car>.Get(Expression<Func<Car, bool>> filter)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool Any(Expression<Func<Car, bool>> filter = null)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

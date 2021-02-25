@@ -15,6 +15,9 @@ namespace ConsoleUI
 			//ManagersTest();
 
 			CarManager carManager = new CarManager(new EfCarDal());
+			RentalManager rentalManager = new RentalManager(new EfRentalDal());
+			rentalManager.Add(new Rental { CarId = 1, CustomerId = 1, RentDate = DateTime.Now });
+			
 			//foreach (var car in carManager.GetCarDetails().Data)
 			//{
 			//	Console.WriteLine("Id : {0} BrandName : {1}  ColorName : {2}  DailyPrice : {3}" ,car.CarId , car.BrandName , car.ColorName , car.DailyPrice );
@@ -34,8 +37,8 @@ namespace ConsoleUI
 			//	Console.WriteLine(result.Message);
 			//}
 
-			RentalManager rentalManager = new RentalManager(new EfRentalDal());
-			rentalManager.Add(new Rental { CarId = 5008, CustomerId = 2, RentDate = DateTime.Now.AddDays(-2) });
+			//RentalManager rentalManager = new RentalManager(new EfRentalDal());
+			//rentalManager.Add(new Rental { CarId = 5008, CustomerId = 2, RentDate = DateTime.Now.AddDays(-2) });
 			//rentalManager.Update(new Rental {Id =13 ,CarId = 5008 , CustomerId = 2 , RentDate= new DateTime(2001,05,1), ReturnDate = new DateTime(2004,01,04)});
 			//var result = rentalManager.Add(new Rental{CarId = 5008 , CustomerId = 1 , RentDate = new DateTime (2021 , 05 , 12)});
 

@@ -18,5 +18,7 @@ namespace Business.Constants
 		public static string ColorUpdated = "Renk güncellendi";
 		public static string ColorNameInvalid = "Renk ismi geçersiz";
 		public static string ColorListed = "Renkler Listelendi";
+		public static string ImageLimitExceded = "En fazla 5 resim eklenebilir";
+		public static string ImageAdded = "Resim Eklendi";
 	}
 }
