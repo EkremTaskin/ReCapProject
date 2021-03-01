@@ -11,13 +11,8 @@ namespace WebAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class RentalsController : ServicesController<IRentalService,Rental>
+	public class RentalsController
 	{
-		IRentalService _rentalService;
-
-		public RentalsController(IRentalService rentalService):base(rentalService)
-		{
-			_rentalService = rentalService;
-		}
+		
 	}
 }

@@ -44,5 +44,10 @@ namespace Business.Concrete
 			_customerDal.Update(customer);
 			return new SuccessResult();
 		}
+
+		public IDataResult<Customer> Get(int id)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -2,10 +2,14 @@
 using Business.Constants;
 using Core.Utilities;
 using Core.Utilities.Business;
+using Core.Utilities.FileHelper;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Business.Concrete
@@ -19,42 +23,61 @@ namespace Business.Concrete
 			_imageDal = imageDal;
 		}
 
-		public IResult Add(Image entity)
+		public IResult Add(IFormFile File, CarImage carImage)
 		{
-			IResult result = BusinessRules.Run(CheckIfImageLimitExceded(entity));
+			IResult result = BusinessRules.Run(CheckIfImageLimitExceded(carImage));
 
 			if (result != null)
 			{
 				return result;
 			}
-			entity.Date = DateTime.Now;
-			_imageDal.Add(entity);
+
+			carImage.ImagePath = FileHelper.Add(File);
+			carImage.Date = DateTime.Now;
+			_imageDal.Add(carImage);
 			return new SuccessResult(Message.ImageAdded);
 		}
 
-		public IResult Delete(Image entity)
+		public IResult Delete(CarImage entity)
 		{
-			throw new NotImplementedException();
+			_imageDal.Delete(entity);
+			return new SuccessResult(Message.CarImageDeleted);
 		}
 
-		public IDataResult<List<Image>> GetAll()
+		public IDataResult<CarImage> Get(int id)
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<CarImage>(_imageDal.Get(i => i.Id == id));
 		}
 
-		public IDataResult<Image> GetById(int id)
+		public IDataResult<List<CarImage>> GetAll()
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll());
 		}
 
-		public IResult Update(Image entity)
+		public IDataResult<List<CarImage>> GetByCarIdImages(int id)
 		{
-			throw new NotImplementedException();
+			var result = _imageDal.GetAll(i => i.CarId == id);
+			if (result.Count > 0)
+			{
+				return new SuccessDataResult<List<CarImage>>(result);
+			}
+			return new ErrorDataResult<List<CarImage>>(Message.Error);
 		}
 
-		private IResult CheckIfImageLimitExceded(Image image)
+		public IDataResult<CarImage> GetById(int id)
 		{
-			var result = _imageDal.GetAll(c=>c.CarId == image.CarId).Count;
+			return new SuccessDataResult<CarImage>(_imageDal.GetById(i => i.Id == id));
+		}
+
+		public IResult Update(CarImage entity)
+		{
+			_imageDal.Update(entity);
+			return new SuccessResult();
+		}
+
+		private IResult CheckIfImageLimitExceded(CarImage image)
+		{
+			var result = _imageDal.GetAll(c => c.CarId == image.CarId).Count;
 
 			if (result >= 5)
 			{

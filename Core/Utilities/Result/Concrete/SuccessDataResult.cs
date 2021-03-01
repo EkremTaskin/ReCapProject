@@ -20,10 +20,5 @@ namespace Core.Utilities
 		{
 
 		}
-
-		public SuccessDataResult():base(default , true)
-		{
-
-		}
 	}
 }
