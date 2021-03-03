@@ -51,35 +51,33 @@ namespace Business.Concrete
 
 		public IDataResult<List<CarImage>> GetAll()
 		{
-
 			return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll());
 		}
 
-		public IDataResult<List<CarImage>> GetByCarIdImages(int id)
-		{
-			var result = _imageDal.GetAll(i => i.CarId == id);
-			if (result.Count > 0)
-			{
-				return new SuccessDataResult<List<CarImage>>(result);
-			}
-			return new ErrorDataResult<List<CarImage>>(Messages.Error);
-		}
-
-		public IDataResult<CarImage> GetById(int id)
-		{
-			return new SuccessDataResult<CarImage>(_imageDal.GetById(i => i.Id == id));
-		}
-
-		public IDataResult<List<CarImage>> GetCarImages(int carId)
+		public IDataResult<List<CarImage>> GetByCarIdImages(int carId)
 		{
 			var result = _imageDal.GetAll(i => i.CarId == carId);
 
 			if (result.Count == 0)
 			{
-				
+				List<CarImage> carImages = new List<CarImage>();
+
+				CarImage carImage = new CarImage()
+				{
+					ImagePath = "soruisareti.jpg"
+				};
+
+				carImages.Add(carImage);
+
+				return new SuccessDataResult<List<CarImage>>(carImages);
 			}
 
 			return new SuccessDataResult<List<CarImage>>(result);
+		}
+
+		public IDataResult<CarImage> GetById(int id)
+		{
+			return new SuccessDataResult<CarImage>(_imageDal.GetById(i => i.Id == id));
 		}
 
 		public IResult Update(CarImage entity)
