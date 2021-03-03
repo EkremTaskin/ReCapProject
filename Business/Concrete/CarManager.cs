@@ -27,13 +27,13 @@ namespace Business.Concrete
 		public IResult Add(Car car)
         {
             _carDal.Add(car);
-            return new SuccessResult(Message.CarAdded);
+            return new SuccessResult(Messages.CarAdded);
         }
 
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
-            return new SuccessResult(Message.CarDeleted);
+            return new SuccessResult(Messages.CarDeleted);
         }
 
 		public IDataResult<Car> Get(int id)
@@ -43,23 +43,23 @@ namespace Business.Concrete
 
 		public IDataResult<List<Car>> GetAll()
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Message.CarListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarListed);
         }
 
         public IDataResult<Car> GetById(int Id)
         {
-            return new SuccessDataResult<Car>(_carDal.GetById(p=>p.Id==Id),Message.CarListed);
+            return new SuccessDataResult<Car>(_carDal.GetById(p=>p.Id==Id),Messages.CarListed);
         }
 
 		public IDataResult<List<CarDetailDto>> GetCarDetails()
 		{
-            return new SuccessDataResult<List<CarDetailDto>>( _carDal.GetCarDetails(),Message.CarListed);
+            return new SuccessDataResult<List<CarDetailDto>>( _carDal.GetCarDetails(),Messages.CarListed);
 		}
 
 		public IResult Update(Car car)
         {
             _carDal.Update(car);
-            return new SuccessResult(Message.CarUpdated);
+            return new SuccessResult(Messages.CarUpdated);
         }
 	}
 }

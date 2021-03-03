@@ -14,11 +14,11 @@ using System.Text;
 
 namespace Business.Concrete
 {
-	public class ImageManager : IImageService
+	public class CarImageManager : ICarImageService
 	{
 		IImageDal _imageDal;
 
-		public ImageManager(IImageDal imageDal)
+		public CarImageManager(IImageDal imageDal)
 		{
 			_imageDal = imageDal;
 		}
@@ -35,13 +35,13 @@ namespace Business.Concrete
 			carImage.ImagePath = FileHelper.Add(File);
 			carImage.Date = DateTime.Now;
 			_imageDal.Add(carImage);
-			return new SuccessResult(Message.ImageAdded);
+			return new SuccessResult(Messages.ImageAdded);
 		}
 
 		public IResult Delete(CarImage entity)
 		{
 			_imageDal.Delete(entity);
-			return new SuccessResult(Message.CarImageDeleted);
+			return new SuccessResult(Messages.CarImageDeleted);
 		}
 
 		public IDataResult<CarImage> Get(int id)
@@ -51,6 +51,7 @@ namespace Business.Concrete
 
 		public IDataResult<List<CarImage>> GetAll()
 		{
+
 			return new SuccessDataResult<List<CarImage>>(_imageDal.GetAll());
 		}
 
@@ -61,12 +62,24 @@ namespace Business.Concrete
 			{
 				return new SuccessDataResult<List<CarImage>>(result);
 			}
-			return new ErrorDataResult<List<CarImage>>(Message.Error);
+			return new ErrorDataResult<List<CarImage>>(Messages.Error);
 		}
 
 		public IDataResult<CarImage> GetById(int id)
 		{
 			return new SuccessDataResult<CarImage>(_imageDal.GetById(i => i.Id == id));
+		}
+
+		public IDataResult<List<CarImage>> GetCarImages(int carId)
+		{
+			var result = _imageDal.GetAll(i => i.CarId == carId);
+
+			if (result.Count == 0)
+			{
+				
+			}
+
+			return new SuccessDataResult<List<CarImage>>(result);
 		}
 
 		public IResult Update(CarImage entity)
@@ -81,7 +94,7 @@ namespace Business.Concrete
 
 			if (result >= 5)
 			{
-				return new ErrorResult(Message.ImageLimitExceded);
+				return new ErrorResult(Messages.ImageLimitExceded);
 			}
 
 			return new SuccessResult();

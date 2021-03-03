@@ -10,15 +10,18 @@ namespace Core.Utilities.FileHelper
 	{
         public static string Add(IFormFile file)
         {
-            var sourcepath = Path.GetTempFileName();
+            var sourcepath = Path.GetTempFileName(); // "C:\\Users\\Ekrem\\AppData\\Local\\Temp\\tmp94F0.tmp"
+
             if (file.Length > 0)
             {
                 using (var stream = new FileStream(sourcepath, FileMode.Create))
                 {
                     file.CopyTo(stream);
+                    stream.Flush();
                 }
             }
-            var result = newPath(file);
+
+            var result = newPath(file); // "C:\\Users\\Ekrem\\source\\repos\\ReCapProject\\WebAPI\\wwwroot\\Images\\carImages\\a82b2dbf-63de-4db7-925a-aa54206ea862_3_2_2021.jpg"
             File.Move(sourcepath, result);
             return result;
         }
@@ -43,6 +46,7 @@ namespace Core.Utilities.FileHelper
                 using (var stream = new FileStream(result, FileMode.Create))
                 {
                     file.CopyTo(stream);
+                    stream.Flush();
                 }
             }
             File.Delete(sourcePath);
@@ -60,5 +64,6 @@ namespace Core.Utilities.FileHelper
             return result;
         }
 
+        public static IDataResult<List<>>
     }
 }

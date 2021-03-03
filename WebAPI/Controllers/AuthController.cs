@@ -28,6 +28,7 @@ namespace WebAPI.Controllers
 			{
 				return BadRequest(UserForLogin.Message);
 			}
+
 			var result = _authService.CreateAccessToken(UserForLogin.Data);
 
 			if (result.Success)

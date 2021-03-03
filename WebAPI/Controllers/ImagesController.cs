@@ -17,10 +17,10 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ImagesController : ControllerBase
     {
-        IImageService _imageService;
+        ICarImageService _imageService;
         IWebHostEnvironment _webHostEnvironment;
 
-        public ImagesController(IImageService imageService, IWebHostEnvironment webHostEnvironment)
+        public ImagesController(ICarImageService imageService, IWebHostEnvironment webHostEnvironment)
         {
             _imageService = imageService;
             _webHostEnvironment = webHostEnvironment;
@@ -48,8 +48,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int imageId)
+        [HttpGet("get")]
+        public IActionResult Get(int imageId)
         {
             var result = _imageService.Get(imageId);
             if (result.Success)

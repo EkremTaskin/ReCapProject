@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Business.Abstract
 {
-	public interface IImageService
+	public interface ICarImageService
 	{
 		IDataResult<List<CarImage>> GetAll();
 		IDataResult<CarImage> Get(int id);
@@ -16,6 +16,7 @@ namespace Business.Abstract
 		IResult Update(CarImage image);
 		IResult Delete(CarImage image);
 
+		IDataResult<List<CarImage>> GetCarImages(int carId);
 		IDataResult<List<CarImage>> GetByCarIdImages(int id);
 	}
 }

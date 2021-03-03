@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Business.Constants
 {
-	public static class Message
+	public static class Messages
 	{
 		public static string CarAdded = "Araba Eklendi!";
 		public static string CarDeleted = "Araba Silindi!";
@@ -21,6 +21,7 @@ namespace Business.Constants
 		public static string ColorUpdated = "Renk Güncellendi!";
 		public static string ColorNameInvalid = "Renk ismi Geçersiz!";
 		public static string ColorListed = "Renkler Listelendi!";
+
 		public static string ImageLimitExceded = "En fazla 5 resim Eklenebilir!";
 		public static string ImageAdded = "Resim Eklendi!";
 		public static string Error = "Hata Mesajı!";

@@ -47,7 +47,7 @@ namespace Business.Concrete
 
 		public IDataResult<Customer> Get(int id)
 		{
-			throw new NotImplementedException();
+			return new SuccessDataResult<Customer>(_customerDal.Get(i=>i.UserId == id));
 		}
 	}
 }

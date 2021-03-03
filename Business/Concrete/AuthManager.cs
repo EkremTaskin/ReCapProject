@@ -25,7 +25,7 @@ namespace Business.Concrete
 		{
 			var claims = _userService.GetClaims(user);
 			var accessToken = _tokenHelper.CreateToken(user , claims.Data);
-			return new SuccessDataResult<AccessToken>(accessToken,Message.AccessTokenCreated);
+			return new SuccessDataResult<AccessToken>(accessToken,Messages.AccessTokenCreated);
 		}
 
 		public IDataResult<User> Login(UserForLoginDto userForLoginDto)
@@ -34,15 +34,15 @@ namespace Business.Concrete
 
 			if (userToCheck.Data == null)
 			{
-				return new ErrorDataResult<User>(Message.UserNotFound);
+				return new ErrorDataResult<User>(Messages.UserNotFound);
 			}
 
 			if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.Data.PasswordHash, userToCheck.Data.PasswordSalt))
 			{
-				return new ErrorDataResult<User>(Message.PasswordError);
+				return new ErrorDataResult<User>(Messages.PasswordError);
 			}
 
-			return new SuccessDataResult<User>(userToCheck.Data, Message.SuccessFullLogin);
+			return new SuccessDataResult<User>(userToCheck.Data, Messages.SuccessFullLogin);
 		}
 
 		public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
@@ -59,7 +59,7 @@ namespace Business.Concrete
 				Status = true
 			};
 			_userService.Add(user);
-			return new SuccessDataResult<User>(user , Message.UserRegistered);
+			return new SuccessDataResult<User>(user , Messages.UserRegistered);
 		}
 
 		public IResult UserExists(string email)
@@ -68,7 +68,7 @@ namespace Business.Concrete
 
 			if (result.Data != null)
 			{
-				return new ErrorResult(Message.UserAlreadyExists);
+				return new ErrorResult(Messages.UserAlreadyExists);
 			}
 
 			return new SuccessResult();
