@@ -45,6 +45,7 @@ namespace Business.Concrete
 			return new SuccessDataResult<User>(userToCheck.Data, Messages.SuccessFullLogin);
 		}
 
+		
 		public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
 		{
 			byte[] passwordHash, passwordSalt;

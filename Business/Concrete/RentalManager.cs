@@ -4,6 +4,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -57,6 +58,11 @@ namespace Business.Concrete
 		public IDataResult<Rental> Get(int id)
 		{
 			return new SuccessDataResult<Rental>(_rentalDal.Get(i=>i.Id == id));
+		}
+
+		public IDataResult<List<RentalDetailDto>> GetRentalDetails()
+		{
+			return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
 		}
 	}
 }

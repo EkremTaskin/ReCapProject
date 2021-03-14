@@ -3,6 +3,8 @@ using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
@@ -11,6 +13,7 @@ using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Business.Concrete
 {
@@ -23,6 +26,7 @@ namespace Business.Concrete
 			_carDal = carDal;
 		}
         
+
         [SecuredOperation("car.Add,admin")]
         [ValidationAspect(typeof(CarValidator))]
 		public IResult Add(Car car)
@@ -43,7 +47,7 @@ namespace Business.Concrete
 		}
 
         [CacheAspect]
-		public IDataResult<List<Car>> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarListed);
         }
